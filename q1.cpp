@@ -40,4 +40,11 @@ int main()
             }
         }
     }
+
+    if (dp[0][n - 1].find('S') != string ::npos)
+    {
+        cout << "Accept\n";
+    }
+    else
+        cout << "Reject \n";
 }
