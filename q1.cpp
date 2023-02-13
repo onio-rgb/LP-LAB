@@ -10,7 +10,10 @@ void check(int i, int j, int k)
         if (a->second.size() < 2)
             continue;
         if (dp[i][k].find(a->second[0]) != string ::npos && dp[k + 1][j].find(a->second[1]) != string ::npos)
+        {
+            // cout << a->first << endl;
             dp[i][j] += a->first;
+        }
     }
 }
 int main()
@@ -32,7 +35,7 @@ int main()
         {
             if (j->second.size() == 1 && j->second == s.substr(i, 1))
             {
-                dp[i][i] = j->first;
+                dp[i][i] += j->first;
             }
         }
     }
@@ -50,7 +53,7 @@ int main()
     for (auto i : dp)
     {
         for (auto j : i)
-            cout << j << " ";
+            cout << j << "\t";
         cout << endl;
     }
 
